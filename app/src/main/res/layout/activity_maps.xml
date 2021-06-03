@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_main"
+    tools:context=".MapsActivity" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="157dp"
+            android:layout_height="65dp"
+            android:translationZ="1dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="10dp"
+                android:text="Common Pro"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"/>
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="50dp"
+                tools:context=".MapsActivity" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/minusMap"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="532dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/holo_blue_light"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:onClick="onClick"
+            android:paddingLeft="0dp"
+            android:paddingTop="0dp"
+            android:paddingRight="0dp"
+            android:paddingBottom="0dp"
+            android:text="-"
+            app:iconPadding="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/plusMap"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="484dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/holo_blue_light"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:onClick="onClick"
+            android:paddingLeft="0dp"
+            android:paddingTop="0dp"
+            android:paddingRight="0dp"
+            android:paddingBottom="0dp"
+            android:text="+"
+            app:iconPadding="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout">
+
+            <Button
+                android:id="@+id/friends_button"
+                style="@style/defaultButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="친구 리스트 " />
+
+            <Button
+                android:id="@+id/reveal_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="공개설정" />
+
+
+            <Button
+                android:id="@+id/logout_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="로그아웃" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

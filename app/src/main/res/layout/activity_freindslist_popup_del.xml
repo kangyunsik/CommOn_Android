@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="379dp"
+        android:layout_height="342dp"
+        android:background="#eeeeee"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/result_popup_name"
+            android:layout_width="match_parent"
+            android:layout_height="53sp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="친구 삭제 하기"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/place_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:gravity="center"
+                android:text="삭제 대상 목록"
+                android:textColor="#000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/result_popup_friendlist_del"
+                android:layout_width="332dp"
+                android:layout_height="119dp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center"
+                android:text="null"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="위 사용자들을 친구목록에서 삭제하시겠습니까?"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/friendslist_delpopup_button_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="확인"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/friendslist_delpopup_button_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="취소"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

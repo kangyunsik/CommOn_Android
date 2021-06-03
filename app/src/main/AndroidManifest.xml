@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.test">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="CommonPro"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Test"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".LoadingActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="[GOOGLE API KEY]" />
+
+        <service
+            android:name=".MyJobService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".LoginActivity"
+            android:label="CommonPro" />
+        <activity android:name=".MapsActivity" />
+        <activity android:name=".FriendslistActivity" />
+        <activity android:name=".JoinActivity" />
+        <activity android:name=".ChatActivity" />
+        <activity
+            android:name=".AlarmActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" />
+
+        <activity
+            android:name=".Friendslist_addPop_findlandmark"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" />
+        <activity
+            android:name=".Friendslist_addPop_add"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" />
+        <activity
+            android:name=".Friendslist_addPop_del"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" />
+        <activity
+            android:name=".Place_popup"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" />
+        <activity
+            android:name=".Landmark_popup"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" />
+        <activity
+            android:name=".Friendslist_addPop_chat"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" />
+        <activity android:name=".OpenSettingActivity" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <!-- Set color used with incoming notification messages (메타 데이터 추가) -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@android:color/holo_blue_dark" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_launcher_foreground" />
+
+    </application>
+
+</manifest>
